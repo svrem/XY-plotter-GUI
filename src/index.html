@@ -1,0 +1,70 @@
+<!-- const { SerialPort } = require('serialport') -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Sudoku For XY Plotter</title>
+</head>
+
+<body>
+  <div class="option-menu" id="option-menu">
+  </div>
+  <div class="sudoku-wrapper">
+    <div id="sudoku"></div>
+    <div class="grid-wrapper">
+      <div class="sub-grid"></div>
+      <div class="sub-grid"></div>
+      <div class="sub-grid"></div>
+      <div class="sub-grid"></div>
+      <div class="sub-grid"></div>
+      <div class="sub-grid"></div>
+      <div class="sub-grid"></div>
+      <div class="sub-grid"></div>
+      <div class="sub-grid"></div>
+    </div>
+  </div>
+
+  <div id="svg-wrapper"></div>
+
+  <div class="bottom-buttons">
+    <button onclick="solve()">Solve</button>
+    <button onclick="generate_sudoku()">Generate</button>
+    <button onclick="generate_with_current()">Generate (with current)</button>
+    <button onclick="draw_sudoku(sudoku, 10, 10)">Generate CNC</button>
+    <button onclick="SVG.generate_svg(sudoku)">Generate SVG</button>
+    <label for="difficulty">Difficulty</label>
+    <input type="range" id="difficulty" min="1" max="98">
+    <label for="visualize">Visualize</label>
+    <input type="checkbox" id="visualize">
+    <label for="com-select">COM Select</label>
+    <select id="com-select">
+    </select>
+    <input type="number" placeholder="BaudRate" value="115200" id="baud-rate">
+  </div>
+
+  <script>
+    serialport.list().then((ports, err) => {
+      const com_select = document.getElementById("com-select")
+      for (let i = 0; i < ports.length; i++) {
+        const COM = ports[i].path;
+
+        const _select = document.createElement("option")
+        _select.value = COM
+        _select.innerHTML = COM
+        com_select.appendChild(_select)
+      }
+    })
+
+
+  </script>
+  <script src="sudoku.js"></script>
+  <script src="cnc.js"></script>
+
+</body>
+
+</html>

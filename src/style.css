@@ -1,0 +1,107 @@
+* {
+  /* font-family: "Courier New", Courier, monospace; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-buttons{
+  cursor: pointer;
+  position: fixed;
+  z-index: 11;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  background: white;
+  /* border: 1px solid black; */
+  box-shadow: inset 0 0 px 4px 0px rgba(0,0,0, .2);
+  bottom: 10px;
+}
+
+.grid-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sub-grid {
+  width: 150px;
+  height: 150.5px;
+  outline: 2px solid black;
+}
+
+.selected {
+  box-shadow: inset 0 0 4px 4px rgba(0,0,0, .2);
+}
+
+.tile {
+  transition: box-shadow ease .1s;
+  width: 50px;
+  height: 50px;
+  outline: 1px solid black;
+  margin: 0;
+  text-align: center;
+  line-height: 3.2rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+.sudoku-wrapper {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  outline: 4px solid black;
+
+
+
+}
+
+#sudoku {
+  /* width: 450px; */
+  /* height: 450px; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  z-index: 10;
+}
+
+.option-menu {
+  list-style: none;
+  padding: 0.3rem;
+  width: fit-content;
+  border-radius: 0.2rem;
+  border: 1px solid black;
+  background-color: white;
+  position: fixed;
+  display: none;
+  z-index: 999;
+}
+
+.option-menu > button {
+  margin: 0;
+  background-color: white;
+  border: 1px solid black;
+  width: 50px;
+}
+
+#svg-wrapper {
+  /* border: 1px solid black; */
+  width: 300px;
+  margin-top: 450px;
+  display: none;
+}
+
+/* #svg-wrapper > * {
+  width: 100%;
+  height: 100%;
+} */

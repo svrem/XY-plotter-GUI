@@ -1,0 +1,33 @@
+{
+  "name": "sudoku-for-xy-plotter",
+  "productName": "Sudoku For XY plotter",
+  "version": "1.0.1",
+  "description": "My Electron application description",
+  "main": "src/renderer.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "@svgdotjs/svg.js": "^3.1.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "serialport": "^10.5.0"
+  },
+  "author": {
+    "name": "svrem"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "@types/serialport": "^8.0.2",
+    "electron": "22.0.2"
+  }
+}
